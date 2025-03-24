@@ -10,15 +10,11 @@ This project demonstrates an AI-powered chatbot application that uses AWS Bedroc
 ```
 .gitignore
 docker-compose.yml
-sample_chat_question.txt
 Admin/
     .env
     admin.py
     Dockerfile
-    README.md
     requirements.txt
-    run_command
-    test.py
 User/
     .env
     app.py

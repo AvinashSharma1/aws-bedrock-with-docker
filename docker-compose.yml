@@ -1,0 +1,40 @@
+services:
+  admin-app:
+    #build: ./ds-mobile-inventory
+    build:
+      context: ./Admin
+      dockerfile: Dockerfile
+    container_name: admin-app    
+    volumes:
+      - ./Admin:/app  # Mounts local directory into the container
+    #volumes:
+    #  - ./Admin:/app
+    networks:
+      - bedrock_demo1_network_web
+    ports:
+      - "8083:8083"
+    env_file:
+      - ./Admin/.env
+    restart: always
+
+  user-app:
+    #build: ./ds-mobile-inventory
+    build:
+      context: ./User
+      dockerfile: Dockerfile
+    container_name: user-app    
+    volumes:
+      - ./User:/app  # Mounts local directory into the container
+    #volumes:
+    #  - ./Admin:/app
+    networks:
+      - bedrock_demo1_network_web
+    ports:
+      - "8084:8084"
+    env_file:
+      - ./Admin/.env
+    restart: always  
+
+networks:
+  bedrock_demo1_network_web:
+    external: true    

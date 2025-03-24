@@ -1,0 +1,11 @@
+docker build -t bedrock-pdf-reader-admin .
+docker run --env-file .env -p 8083:8083 -it bedrock-pdf-reader-admin
+
+docker-compose up --build
+docker-compose up --build -d
+
+docker build --no-cache -t bedrock-pdf-reader-admin .
+
+
+docker-compose down
+docker-compose up -d

@@ -1,0 +1,7 @@
+streamlit
+langchain
+langchain_community
+faiss_cpu
+boto3
+python-dotenv
+langchain_aws
